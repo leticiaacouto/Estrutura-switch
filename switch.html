@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estrutura Switch-Case</title>
+    <style>
+        body{
+            font-family: sans-serif;
+            text-align: center;
+            background-color: rgb(255, 229, 189);
+            margin-top: 2%;
+        }
+
+        img{
+            max-width: 400px;
+            max-height: 400px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1x>Selecione o dia da semana:</h1>
+
+    <select name="" id="diaSemana" onchange="mostrarMensagem()">
+        <option value="default">Selecione um dia</option>
+        <option value="segunda">Segunda-Feira</option>
+        <option value="terca">Terça-Feira</option>
+        <option value="quarta">Quarta-Feira</option>
+        <option value="quinta">Quinta-Feira</option>
+        <option value="sexta">Sexta-Feira</option>
+        <option value="sabado">Sábado</option>
+        <option value="domingo">Domingo</option>
+    </select>
+
+    <div id="mensagem"></div>
+
+    <script>
+
+        function mostrarMensagem(){
+        var select = document.getElementById('diaSemana');
+        var diaSelecionado = select.value;
+        var mensagemElemento = document.getElementById('mensagem');
+        var mensagem = "";
+        var imagem = "";
+
+        switch (diaSelecionado) {
+            case "segunda":
+                mensagem = "Bom dia! Mais uma semana começando.";
+                imagem = "https://images.unsplash.com/photo-1691097097192-03866b391c97?q=80&w=1453&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+                break;
+            case "terca":
+                mensagem = "Olá! Terça-Feira já está aqui, vamos trabalhar!";
+                imagem = "https://images.unsplash.com/photo-1512314889357-e157c22f938d?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+            break;
+            case "quarta":
+                mensagem = "Ótima Quarta-Feira!";
+                imagem = "https://images.unsplash.com/photo-1691097097104-5d1d91ebba42?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+                break;
+            case "quinta":
+                mensagem = "Bom trabalho! Ótima Quinta- feira";
+                imagem = "https://images.unsplash.com/photo-1691097097069-09197bf73de1?q=80&w=1495&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+                break;
+            case "sexta":
+                mensagem = "Sextou!";
+                imagem = "https://images.unsplash.com/photo-1691097097106-4d8c330266f0?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+                break;
+            case "sabado":
+                mensagem = "Sabadou!";
+                imagem = "https://images.unsplash.com/photo-1691097097517-e30038aeda68?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+                break;
+            case "domingo":
+                    mensagem = "Ótimo domingo!!!";
+                    imagem = "https://images.unsplash.com/photo-1691097097539-f2f9d9a5784f?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+                break;
+            default:
+                mensagem = "Por favor, selecione um dia da semana";
+                imagem = "";
+        }
+        mensagemElemento.innerHTML = "<p>" + mensagem + "</p>";
+        if (imagem !== ""){
+            mensagemElemento.innerHTML += "<img src='" + imagem+ "' alt= 'Imagem do dia selecionado'>";  
+        }
+
+    }
+    </script>
+
+</body>
+</html>
